@@ -13,18 +13,18 @@ app.config['MYSQL_DATABASE_DB'] = 'disney'
 app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
 # user the mysql object's method "init_app" and pass it the flask object
 mysql.init_app(app)
-
+conn = mysql.connect()
+#set up a cursor object, which is what the sql uses to connect and run queries
+cursor = conn.cursor()
 #session 'salt'
 app.secret_key = 'asdf&&^(*ahasfljhas'
 
 @app.route('/')
 def index():
-	#set up a cursor object, which is what the sql uses to connect and run queries
-	cursor = mysql.connect().cursor()
 	# execute out query
 	cursor.execute("SELECT content FROM page_content WHERE page = 'home' AND location = 'header' AND status = '1'")
 	header_text = cursor.fetchall()
-	cursor2 = mysql.connect().cursor()
+	cursor2 = cursor
 	# execute out query
 	cursor2.execute("SELECT content, header_text, image_link FROM page_content WHERE page = 'home' AND location = 'left_block' AND status = '1' LIMIT 5")
 	left_block_data = cursor2.fetchall()
@@ -76,13 +76,13 @@ def admin_update():
 		body = request.form['body_text']
 		header = request.form['header']
 		image = request.form['image']
-		#set up a cursor object, which is what the sql uses to connect and run queries
-		cursor = mysql.connect().cursor()
-		query = "INSERT INTO page_content VALUES(DEFAULT, 'home', '"+body+"', 1, 1, 'left_block', NULL, '"+header+"', '"+image+"')"
-		print query
+		#set my query to a variable
+		query = "INSERT INTO page_content VALUES(DEFAULT, 'home', %s, 1, 1, 'left_block', NULL, %s, %s)"
+		print (query, (body, header, image))
 		# execute out query
 		# cursor.execute("INSERT INTO page_content VALUES(DEFAULT, 'home', '%s', 1, 1, 'left_block', NULL, '%s', '%s')" ) % body, header, image
-		cursor.execute(query)
+		cursor.execute(query, (body, header, image))
+		conn.commit()
 
 		return redirect('/admin_portal?success=Added')
 	#===================================
