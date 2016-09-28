@@ -1,0 +1,80 @@
+@import 'configs/_variables'
+body
+	background-color: $disney-blue
+.header
+	height: 60px
+	background-color: $disney-white
+	overflow: hidden
+	.menu-wrapper
+		max-width: 960px
+		margin: auto
+		text-align: center
+		li
+			list-style-type: none
+			display: inline-block
+			float: left
+			padding: 5px 20px
+.main-content
+	max-width: 960px
+	margin: auto
+	border-radius: 5px
+	background-color: $disney-white
+	.header-image
+		text-align: center
+		img
+			max-width: 100%
+			border-radius: 12px
+	.left-content-bar
+		vertical-align: top
+		width: 69%
+		display: inline-block
+		box-sizing: border-box
+		padding-left: 20px
+		p.left-bar-header
+			font-family: Helvetica, Arial, sans-serif
+			font-size: 20px
+			line-height: 28px
+			color: $content-font
+		.left-block-items
+			.left-block-item
+				margin-bottom: 10px
+				border-bottom: 1px solid #ccc
+				.hero-image
+					display: inline-block
+					max-width: 30%
+					img
+						max-width: 100%
+				.hero-wrapper
+					max-width: 60%
+					display: inline-block
+					.block-header
+					.block-text
+	.right-content-bar
+		width: 29%
+		display: inline-block
+		vertical-align: top
+		.print-map
+			padding: 20px 0px
+		.tickets
+			font-family: Helvetica, Arial, sans-serif
+			background-color: $disney-blue
+			border-radius: 12px
+			text-align: center
+			padding: 20px 0px
+			p
+				color: $disney-white
+			.ticket-price
+				color: $disney-white
+				font-size: 36px
+				font-weight: bold
+			button
+				background-color: $disney-blue
+				color: $disney-white
+				border: 1px solid #ddd
+				border-radius: 30px
+				transition: all .7s ease
+				&:hover
+					background-color: #deedf4
+					color: $disney-blue
+		.map
+			text-align: center
