@@ -22,71 +22,22 @@
 				<!-- Encounter the magic of nature with rare creatures, authentic adventures and world-class entertainment at Disney’s Animal Kingdom park, one of the largest animal theme parks in the world. Read More -->
 			</p>
 			<div class="left-block-items">
-				<div class="left-block-item">
-					<div class="hero-image">
-						<img src="static/images/animal-kingdom-night-14.jpg" alt="">
+				{% for i in data %}
+					<div class="left-block-item">
+						<div class="hero-image">
+							<img src="static/images/{{i[2]}}" alt="">
+						</div>
+						<div class="hero-wrapper">
+							<p class="block-header">
+								{{i[1]}}
+							</p>
+							<p class="block-text">
+								{{i[0]}}
+							</p>
+						</div>
 					</div>
-					<div class="hero-wrapper">
-						<p class="block-header">
-							Nighttime Experiences
-						</p>
-						<p class="block-text">
-							For the very first time, Disney’s Animal Kingdom park is alive with magic nightly with new attractions, dining and entertainment.
-						</p>
-					</div>
-				</div>
-				<div class="left-block-item">
-					<div class="hero-image">
-						<img src="static/images/animal-kingdom-night-14.jpg" alt="">
-					</div>
-					<div class="hero-wrapper">
-						<p class="block-header">
-							Nighttime Experiences
-						</p>
-						<p class="block-text">
-							For the very first time, Disney’s Animal Kingdom park is alive with magic nightly with new attractions, dining and entertainment.
-						</p>
-					</div>
-				</div>
-				<div class="left-block-item">
-					<div class="hero-image">
-						<img src="static/images/animal-kingdom-night-14.jpg" alt="">
-					</div>
-					<div class="hero-wrapper">
-						<p class="block-header">
-							Nighttime Experiences
-						</p>
-						<p class="block-text">
-							For the very first time, Disney’s Animal Kingdom park is alive with magic nightly with new attractions, dining and entertainment.
-						</p>
-					</div>
-				</div>
-				<div class="left-block-item">
-					<div class="hero-image">
-						<img src="static/images/animal-kingdom-night-14.jpg" alt="">
-					</div>
-					<div class="hero-wrapper">
-						<p class="block-header">
-							Nighttime Experiences
-						</p>
-						<p class="block-text">
-							For the very first time, Disney’s Animal Kingdom park is alive with magic nightly with new attractions, dining and entertainment.
-						</p>
-					</div>
-				</div>
-				<div class="left-block-item">
-					<div class="hero-image">
-						<img src="static/images/animal-kingdom-night-14.jpg" alt="">
-					</div>
-					<div class="hero-wrapper">
-						<p class="block-header">
-							Nighttime Experiences
-						</p>
-						<p class="block-text">
-							For the very first time, Disney’s Animal Kingdom park is alive with magic nightly with new attractions, dining and entertainment.
-						</p>
-					</div>
-				</div>
+				{% endfor %}
+				
 			</div>
 		</div>
 		<div class="right-content-bar">

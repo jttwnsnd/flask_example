@@ -29,7 +29,7 @@ def index():
 	cursor2.execute("SELECT content, header_text, image_link FROM page_content WHERE page = 'home' AND location = 'left_block' AND status = '1' LIMIT 5")
 	left_block_data = cursor2.fetchall()
 	print header_text
-	return render_template('index.html', data = left_block_data)
+	return render_template('index.html', header = header_text, data = left_block_data)
 #=======================
 #make a new route called admin
 @app.route('/admin')
