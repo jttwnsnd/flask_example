@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block body %}
-{% if message: %}
+{% if failed %}
 	<div class="alert alert-danger text-center">{{message}}</div>
 {% endif %}
 <div class="col-xs-20 col-xs-offset-1">

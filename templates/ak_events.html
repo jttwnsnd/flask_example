@@ -1,28 +1,19 @@
-{% extends 'layout.html' %}
-{% block body %}
-	<div class="header">
-		<ul class="menu-wrapper text-center">
-			<li>Parks & Tickets</li>
-			<li>Places to Stay</li>
-			<li>Things To Do</li>
-			<li>Help</li>
-			<li>Cart</li>
-		</ul>
-	</div>
-	{% block subpage %}
+{% extends 'index.html' %}
+{% block subpage %}
 	<div class="main-content">
 		<div class="main-header">
-			<h1 class='text-center'>Disney's Animal Kingdom Theme Park</h1>
+			<h1>{{header[0]}}</h1>
 		</div>
 		<div class="header-image">
-			<img src="static/images/animal-kingdom.jpg" alt="">
+			<img src="static/images/{{header[1]}}" alt="">
 		</div>
-		<div class="left-content-bar">
+		<h2 class="text-center">{{header[2]}}</h2>
+
+		<!-- <div class="left-content-bar">
 			<p class="left-bar-header">
-				{{header[0][0]}}
-			</p>
-			<a class="more_link" href="#">Read More</a>
-			<div class="left-block-items">
+				
+			</p> -->
+			<!-- <div class="left-block-items">
 				{% for i in data %}
 					<a href="/{{i[1]}}">
 						<div class="left-block-item">
@@ -40,8 +31,8 @@
 						</div>
 					</a>
 				{% endfor %}	
-			</div>
-		</div>
+			</div> -->
+		<!-- </div>
 		<div class="right-content-bar">
 			<div class="hours">
 				<p class="bigger">Hours</p>
@@ -62,8 +53,6 @@
 			<div class="map">
 				<img src="static/images/map.png" alt="">
 			</div>
-		</div>
+		</div> -->
 	</div>
-	{% endblock %}
-
 {% endblock %}

@@ -1,10 +1,23 @@
 @import 'configs/_variables'
+
+
 body
 	background-color: $disney-blue
+	#nav
+		display: inline-block
+		ul
+			li
+				list-style-type: none
+				display: inline-block
+				margin-left: 5px
+				padding: 10px
+				a
+					color: $disney-white
 .header
 	height: 60px
 	background-color: $disney-white
 	overflow: hidden
+	font-weight: lighter
 	.menu-wrapper
 		max-width: 960px
 		margin: auto
@@ -12,8 +25,8 @@ body
 		li
 			list-style-type: none
 			display: inline-block
-			float: left
 			padding: 5px 20px
+			margin-top: 8px
 .main-content
 	max-width: 960px
 	margin: auto
